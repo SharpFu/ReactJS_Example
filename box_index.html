@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>react JS example</title>
+	<script src="js/react.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/react-dom.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/base.css"/>
+</head>
+<body>
+	<div id="container">
+		
+	</div>
+	<script type="text/babel">
+		var news=['sharp','sk','del','liya','icove','traives'];
+		var FormPanel = React.createClass({
+			render:function(){
+				return (
+					<div>
+						<textarea rows="4" placeholder="请输入备注信息..."></textarea>
+						<button>提交</button>
+					</div>
+					
+				)
+			}
+		});
+		var ListNews = React.createClass({
+			render:function(){
+				return (
+					<ul className="list_item">
+						<li>
+							<img src="img/icon_operation.png" width="32px" height="32px" />
+							<div className="list_item_center">
+								<span>title1</span>
+								<span>hello,world!!!</span>	
+							</div>
+							<span className="time">2016.09.18</span>
+						</li>
+						<li>
+							<img src="img/icon_operation.png" width="32px" height="32px" />
+							<div className="list_item_center">
+								<span>title2</span>
+								<span>hello,world!!!</span>	
+							</div>
+							<span className="time">2016.09.18</span>
+						</li>
+						<li>
+							<img src="img/icon_operation.png" width="32px" height="32px" />
+							<div className="list_item_center">
+								<span>title3</span>
+								<span>hello,world!!!</span>	
+							</div>
+							<span className="time">2016.09.18</span>
+						</li>
+						<li>
+							<img src="img/icon_operation.png" width="32px" height="32px" />
+							<div className="list_item_center">
+								<span>title4</span>
+								<span>hello,world!!!</span>	
+							</div>
+							<span className="time">2016.09.18</span>
+						</li>
+					</ul>
+				)
+			}
+		});
+		var Header = React.createClass({
+			render:function(){
+				return (
+					<header>message Box</header>
+				)
+			}
+		});
+		var BoxMessage = React.createClass({
+			render:function(){
+				return (
+				<div>
+					<Header/>
+					<ListNews/>
+					<FormPanel/>
+				</div>
+				)
+			}
+		});
+		ReactDOM.render(
+		<BoxMessage/>,
+		document.getElementById("container")
+		)
+		
+	</script>
+</body>
+</html>
